@@ -1,8 +1,7 @@
-# Scripting-AI-3.0
 import google.generativeai as genai
 
 # Configure the API (Replace with your actual API key)
-genai.configure(api_key="AIzaSyC2xdAWFYn-a725P2zm3b_evzYFwQ6Sj1U")  # 🔹 Ensure you replace this with your real API key
+genai.configure(api_key="ENTER_API_KEY")  # 🔹 Ensure you replace this with your real API key
 
 # Define the AI model
 model = genai.GenerativeModel("gemini-1.5-pro-latest")  # ✅ Using the correct model
@@ -20,15 +19,10 @@ def generate_script(topic):
     except Exception as e:
         return f"Error: {e}"
 
-# Loop to generate multiple scripts
-while True:
-    topic = input("\n🎬 Enter a topic for scripting (or type 'exit' to stop): ") 
-    if topic.lower() == "exit":
-        print("\n🚪 Exiting script generation. Goodbye!")
-        break  # Stop the loop
-    
-    # Generate and print the script
-    script_output = generate_script(topic)
-    print("\n🎬 **Generated Script:**\n")
-    print(script_output)
-    print("\n" + "="*50)  # Separator for readability
+# Take user input
+topic = input("Start Scripting: ") 
+
+# Generate and print the script
+script_output = generate_script(topic)
+print("\n🎬 **Generated Script:**\n")
+print(script_output)
